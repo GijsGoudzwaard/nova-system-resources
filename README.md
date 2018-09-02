@@ -13,7 +13,7 @@ You must use either Linux or MacOS.
 You can install the nova tool in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require gijsg/nova-system-resources
+composer require gijsg/system-resources
 ```
 
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
