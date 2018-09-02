@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('ram', 'GijsG\SystemAnalytics\SystemAnalytics@ram');
+Route::get('ram', 'GijsG\SystemResources\SystemResources@ram');
 
-Route::get('cpu', 'GijsG\SystemAnalytics\SystemAnalytics@cpu');
+Route::get('cpu', 'GijsG\SystemResources\SystemResources@cpu');
 

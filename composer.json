@@ -1,5 +1,5 @@
 {
-    "name": "gijsg/systemAnalytics",
+    "name": "gijsg/systemResources",
     "description": "A Laravel Nova card.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "GijsG\\SystemAnalytics\\": "src/"
+            "GijsG\\SystemResources\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "GijsG\\SystemAnalytics\\CardServiceProvider"
+                "GijsG\\SystemResources\\CardServiceProvider"
             ]
         }
     },

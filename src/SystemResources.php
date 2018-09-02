@@ -1,11 +1,11 @@
 <?php
 
-namespace GijsG\SystemAnalytics;
+namespace GijsG\SystemResources;
 
 use Laravel\Nova\Card;
-use GijsG\SystemAnalytics\Adapters\SystemResourcesAdapter;
+use GijsG\SystemResources\Adapters\SystemResourcesAdapter;
 
-class SystemAnalytics extends Card
+class SystemResources extends Card
 {
     /**
      * Contains the system resources.

@@ -1,6 +1,6 @@
 <?php
 
-namespace GijsG\SystemAnalytics\Adapters;
+namespace GijsG\SystemResources\Adapters;
 
 class SystemResourcesAdapter implements SystemResourcesInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace GijsG\SystemAnalytics;
+namespace GijsG\SystemResources;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
@@ -21,8 +21,8 @@ class CardServiceProvider extends ServiceProvider
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('systemAnalytics', __DIR__.'/../dist/js/card.js');
-            Nova::style('systemAnalytics', __DIR__.'/../dist/css/card.css');
+            Nova::script('systemResources', __DIR__.'/../dist/js/card.js');
+            Nova::style('systemResources', __DIR__.'/../dist/css/card.css');
         });
     }
 
@@ -38,7 +38,7 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/systemAnalytics')
+                ->prefix('nova-vendor/systemResources')
                 ->group(__DIR__.'/../routes/api.php');
     }
 

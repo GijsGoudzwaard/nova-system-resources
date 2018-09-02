@@ -43,7 +43,7 @@ export default function lineChart(resource, element) {
                     delay: 10000,
                     refresh: 5000,
                     onRefresh: function (chart) {
-                        axios.get('/nova-vendor/systemAnalytics/' + resource).then(function (result) {
+                        axios.get('/nova-vendor/systemResources/' + resource).then(function (result) {
                             chart.data.datasets.forEach(function (dataset) {
                                 dataset.data.push({
                                     x: Date.now(),
@@ -57,7 +57,7 @@ export default function lineChart(resource, element) {
         }
     });
 
-    axios.get('/nova-vendor/systemAnalytics/' + resource).then(function (result) {
+    axios.get('/nova-vendor/systemResources/' + resource).then(function (result) {
         chart.data.datasets.forEach(function (dataset) {
             dataset.data.push({
                 x: Date.now() - (10000),
