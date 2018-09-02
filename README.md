@@ -16,7 +16,7 @@ You can install the nova tool in to a Laravel app that uses [Nova](https://nova.
 composer require gijsg/system-resources
 ```
 
-Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
+Next up, you must register the tool with Nova. This is typically done in the `cards` method of the `NovaServiceProvider`.
 
 
 ```php
@@ -24,7 +24,7 @@ Next up, you must register the tool with Nova. This is typically done in the `to
 
 // ...
 
-public function tools()
+protected function cards()
 {
     return [
         // ...
