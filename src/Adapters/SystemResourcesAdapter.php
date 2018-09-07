@@ -61,15 +61,13 @@ class SystemResourcesAdapter implements SystemResourcesInterface
      */
     private function getDriver()
     {
-        $agent = $_SERVER['HTTP_USER_AGENT'];
+        $agent = PHP_OS;
+        $driver = 'linux';
 
-        if (preg_match('/Linux/', $agent))
-            $driver = 'linux';
-
-        if (preg_match('/Win/', $agent))
+        if (strpos(strtolower($agent), 'win') !== false)
             $driver = 'windows';
 
-        if (preg_match('/Mac/', $agent))
+        if ($agent === 'Darwin')
             $driver = 'mac';
 
         return new $this->eligible_drivers[$driver];
