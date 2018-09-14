@@ -15,7 +15,7 @@
         props: ['card'],
 
         mounted() {
-            lineChart(this.resource, document.getElementById(this.resource))
+            lineChart(this.card.usage, this.resource, document.getElementById(this.resource))
         },
 
         data() {

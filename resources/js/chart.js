@@ -1,13 +1,17 @@
 import 'chartjs-plugin-streaming';
 import axios from 'axios';
 
-export default function lineChart(resource, element) {
+export default function lineChart(usage, resource, element) {
     let chart = element.getContext("2d");
+
+    let resources = buildData(usage);
+
     chart = new Chart(chart, {
         type: 'line',
         data: {
             datasets: [{
-                label: '',
+                label: 'Usage',
+                data: resources,
                 borderColor: '#4099de',
                 backgroundColor: '#fff',
                 fill: false,
@@ -59,14 +63,16 @@ export default function lineChart(resource, element) {
 
     axios.get('/nova-vendor/systemResources/' + resource).then(function (result) {
         chart.data.datasets.forEach(function (dataset) {
-            dataset.data.push({
-                x: Date.now() - (10000),
-                y: Math.round(result.data)
-            });
-            dataset.data.push({
-                x: Date.now() - (5000),
-                y: Math.round(result.data)
-            });
+            if (usage === null) {
+                dataset.data.push({
+                    x: Date.now() - (10000),
+                    y: Math.round(result.data)
+                });
+                dataset.data.push({
+                    x: Date.now() - (5000),
+                    y: Math.round(result.data)
+                });
+            }
             dataset.data.push({
                 x: Date.now(),
                 y: Math.round(result.data)
@@ -75,4 +81,17 @@ export default function lineChart(resource, element) {
 
         chart.update();
     });
+}
+
+function buildData(usage) {
+    let resources = [];
+
+    for (let i in usage) {
+        resources.push({
+            x: Date.now() - ((usage.length * 5000) - (i * 5000)),
+            y: usage[i]
+        });
+    }
+
+    return resources;
 }
