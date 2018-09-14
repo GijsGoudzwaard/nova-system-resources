@@ -2,7 +2,7 @@
 
 namespace GijsG\SystemResources\Adapters;
 
-class SystemResourcesAdapter implements SystemResourcesInterface
+class SystemResources
 {
     /**
      * Contains all the eligible drivers and their implementations.
@@ -10,8 +10,8 @@ class SystemResourcesAdapter implements SystemResourcesInterface
      * @var array
      */
     private $eligible_drivers = [
-        'mac' => MacSystemResourcesAdapter::class,
-        'linux' => LinuxSystemResourcesAdapter::class
+        'mac'   => MacSystemResources::class,
+        'linux' => LinuxSystemResources::class
     ];
 
     /**
@@ -25,31 +25,11 @@ class SystemResourcesAdapter implements SystemResourcesInterface
     }
 
     /**
-     * Retrieve the ram usage.
-     *
-     * @return int
-     */
-    public function ramResources()
-    {
-        return $this->getDriver()->getUsage();
-    }
-
-    /**
-     * Retrieve the total of amount of ram available.
-     *
-     * @return int
-     */
-    public function ramTotalResources()
-    {
-        return $this->getDriver()->getTotal();
-    }
-
-    /**
      * Retrieve the used resources from the total resources as a percentage.
      *
      * @return int
      */
-    public function ramUsedResourcesPercentage()
+    public function ramResources()
     {
         return $this->getDriver()->ramUsedResourcesPercentage();
     }

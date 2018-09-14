@@ -2,7 +2,7 @@
 
 namespace GijsG\SystemResources\Adapters;
 
-class MacSystemResourcesAdapter implements SystemResourcesInterface
+class MacSystemResources implements SystemResourcesInterface
 {
     /**
      * Retrieve the cpu usage.

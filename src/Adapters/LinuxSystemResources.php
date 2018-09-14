@@ -2,7 +2,7 @@
 
 namespace GijsG\SystemResources\Adapters;
 
-class LinuxSystemResourcesAdapter implements SystemResourcesInterface
+class LinuxSystemResources implements SystemResourcesInterface
 {
     /**
      * Contains all the memory stats from 'free'.

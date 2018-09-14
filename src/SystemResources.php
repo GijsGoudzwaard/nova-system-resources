@@ -3,14 +3,14 @@
 namespace GijsG\SystemResources;
 
 use Laravel\Nova\Card;
-use GijsG\SystemResources\Adapters\SystemResourcesAdapter;
+use GijsG\SystemResources\Adapters\SystemResources as Adapter;
 
 class SystemResources extends Card
 {
     /**
      * Contains the system resources.
      *
-     * @var SystemResourcesAdapter
+     * @var Adapter
      */
     private $adapter;
 
@@ -40,7 +40,7 @@ class SystemResources extends Card
 
         $this->resource = $resource;
 
-        $this->adapter = new SystemResourcesAdapter;
+        $this->adapter = new Adapter;
     }
 
     /**
@@ -50,7 +50,7 @@ class SystemResources extends Card
      */
     public function ram()
     {
-        return $this->adapter->ramUsedResourcesPercentage();
+        return $this->adapter->ramResources();
     }
 
     /**
