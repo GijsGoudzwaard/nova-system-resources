@@ -34,7 +34,7 @@ protected function cards()
 }
 ```
 
-Specifying the width of the cards uses the nova card with notation: `1/2`, `1/4`, `full` etc.
+You can specify the width of the cards using the nova card width notation: `1/2`, `1/4`, `full` etc.
 ```php
 new \GijsG\SystemResources\SystemResources('ram', '1/3'),
 ```
