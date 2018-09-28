@@ -40,13 +40,16 @@ class SystemResources extends Card
      * Create a new instance and set the system resources.
      *
      * @param null|string $resource
+     * @param null|string $width
      * @param null|string $component
      */
-    public function __construct(?string $resource = null, ?string $component = null)
+    public function __construct(?string $resource = null, string $width = '1/2', ?string $component = null)
     {
         parent::__construct($component);
 
         $this->resource = $resource;
+
+        $this->width = $width;
 
         $this->usage = Cache::get("{$resource}_resources");
 

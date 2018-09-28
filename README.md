@@ -34,4 +34,8 @@ protected function cards()
 }
 ```
 
+Specifying the width of the cards uses the nova card with notation: `1/2`, `1/4`, `full` etc.
+```php
+new \GijsG\SystemResources\SystemResources('ram', '1/3'),
+```
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
