@@ -13,7 +13,8 @@ class SystemResources
      */
     private $eligible_drivers = [
         'mac'   => MacSystemResources::class,
-        'linux' => LinuxSystemResources::class
+        'linux' => LinuxSystemResources::class,
+        'windows' => WindowsSystemResources::class
     ];
 
     /**
