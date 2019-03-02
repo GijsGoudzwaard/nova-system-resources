@@ -41,4 +41,4 @@ You can specify the width of the cards using the nova card width notation: `1/2`
 ```php
 new \GijsG\SystemResources\SystemResources('ram', '1/3'),
 ```
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
