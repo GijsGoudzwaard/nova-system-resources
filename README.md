@@ -11,6 +11,8 @@ This [Nova](https://nova.laravel.com) tool gives you a live overview of your RAM
 
 You must use either Linux or MacOS.
 
+`shell_exec` must not be disabled in your `php.ini`. Make sure that `disabled_functions` does not contain `shell_exec`.
+
 ## Installation
 
 You can install the nova tool in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
