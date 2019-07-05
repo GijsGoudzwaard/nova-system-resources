@@ -15,7 +15,8 @@ export default function lineChart(usage, resource, element) {
                 borderColor: '#4099de',
                 backgroundColor: '#fff',
                 fill: false,
-                borderWidth: 2
+                borderWidth: 2,
+                pointHitRadius: 15
             }]
         },
         options: {
@@ -54,6 +55,8 @@ export default function lineChart(usage, resource, element) {
                                     y: Math.round(result.data)
                                 });
                             });
+
+                            chart.update();
                         });
                     }
                 }

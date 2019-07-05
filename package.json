@@ -14,10 +14,10 @@
         "laravel-mix": "^1.0"
     },
     "dependencies": {
-        "axios": "^0.18.0",
-        "chart.js": "^2.7.2",
-        "chartjs-plugin-streaming": "^1.6.0",
-        "moment": "^2.22.2",
-        "vue": "^2.5.0"
+        "axios": "^0.19.0",
+        "chart.js": "^2.8.0",
+        "chartjs-plugin-streaming": "^1.8.0",
+        "moment": "^2.24.0",
+        "vue": "^2.6.0"
     }
 }
