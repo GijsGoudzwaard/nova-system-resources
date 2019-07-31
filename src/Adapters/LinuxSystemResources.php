@@ -36,7 +36,7 @@ class LinuxSystemResources implements SystemResourcesInterface
      */
     public function cpuResources()
     {
-        return floatval(shell_exec("grep 'cpu ' /proc/stat | awk '{printf ($2+$4)*100/($2+$4+$5)}'"));
+        return floatval(shell_exec('echo "`LC_ALL=C top -bn2 | grep "Cpu(s)" | tail -n1 | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk \'{print 100 - $1}\'`"'));
     }
 
     /**
