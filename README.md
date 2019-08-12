@@ -1,6 +1,7 @@
 # A Laravel Nova tool to show system resources
 
 [![Total Downloads](https://poser.pugx.org/gijsg/system-resources/downloads)](https://packagist.org/packages/gijsg/system-resources)
+[![Latest Stable Version](https://poser.pugx.org/gijsg/system-resources/v/stable)](https://packagist.org/packages/gijsg/system-resources)
 [![License](https://poser.pugx.org/gijsg/system-resources/license)](https://packagist.org/packages/gijsg/system-resources)
 
 This [Nova](https://nova.laravel.com) tool gives you a live overview of your RAM and CPU usage.
