@@ -25,6 +25,7 @@ class WindowsSystemResources implements SystemResourcesInterface
     {
         $ram = shell_exec("wmic OS get FreePhysicalMemory /Value");
         $ram = (int) str_replace('FreePhysicalMemory=', '', $ram);
+
         return (int) ($ram / 1024);
     }
 
@@ -37,6 +38,7 @@ class WindowsSystemResources implements SystemResourcesInterface
     {
         $ram = shell_exec("wmic OS get TotalVisibleMemorySize /Value");
         $ram = (int) str_replace('TotalVisibleMemorySize=', '', $ram);
+
         return (int) ($ram / 1024);
     }
 
