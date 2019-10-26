@@ -20,9 +20,11 @@ class CardServiceProvider extends ServiceProvider
             $this->routes();
         });
 
+        Nova::translations(__DIR__ . '/../resources/lang/' . app()->getLocale() . '.json');
+
         Nova::serving(function (ServingNova $event) {
-            Nova::script('systemResources', __DIR__.'/../dist/js/card.js');
-            Nova::style('systemResources', __DIR__.'/../dist/css/card.css');
+            Nova::script('systemResources', __DIR__ . '/../dist/js/card.js');
+            Nova::style('systemResources', __DIR__ . '/../dist/css/card.css');
         });
     }
 
@@ -38,8 +40,8 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/systemResources')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/systemResources')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

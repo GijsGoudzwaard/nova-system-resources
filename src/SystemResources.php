@@ -86,6 +86,7 @@ class SystemResources extends Card
         return $this->withMeta([
             'usage' => $this->usage,
             'resource' => $this->resource,
+            'locale' => app()->getLocale(),
             'component' => 'systemAnalytics'
         ]);
     }

@@ -1,16 +1,18 @@
 import 'chartjs-plugin-streaming';
 import axios from 'axios';
+import * as moment from 'moment';
 
-export default function lineChart(usage, resource, element) {
+export default function lineChart(ctx, element) {
     let chart = element.getContext("2d");
+    let resources = buildData(ctx.card.usage);
 
-    let resources = buildData(usage);
+    moment.locale(ctx.card.locale);
 
     chart = new Chart(chart, {
         type: 'line',
         data: {
             datasets: [{
-                label: 'Usage',
+                label: ctx.$root.__('usage'),
                 data: resources,
                 borderColor: '#4099de',
                 backgroundColor: '#fff',
@@ -48,10 +50,10 @@ export default function lineChart(usage, resource, element) {
                     delay: 10000,
                     refresh: 5000,
                     onRefresh: function (chart) {
-                        axios.get('/nova-vendor/systemResources/' + resource).then(function (result) {
+                        axios.get('/nova-vendor/systemResources/' + ctx.resource).then(function (result) {
                             chart.data.datasets.forEach(function (dataset) {
                                 dataset.data.push({
-                                    x: Date.now(),
+                                    x: moment(),
                                     y: Math.round(result.data)
                                 });
                             });
@@ -64,20 +66,20 @@ export default function lineChart(usage, resource, element) {
         }
     });
 
-    axios.get('/nova-vendor/systemResources/' + resource).then(function (result) {
+    axios.get('/nova-vendor/systemResources/' + ctx.resource).then(function (result) {
         chart.data.datasets.forEach(function (dataset) {
-            if (usage === null) {
+            if (ctx.card.usage === null) {
                 dataset.data.push({
-                    x: Date.now() - (10000),
+                    x: moment().subtract(10, 'seconds'),
                     y: Math.round(result.data)
                 });
                 dataset.data.push({
-                    x: Date.now() - (5000),
+                    x: moment().subtract(5, 'seconds'),
                     y: Math.round(result.data)
                 });
             }
             dataset.data.push({
-                x: Date.now(),
+                x: moment(),
                 y: Math.round(result.data)
             });
         });
@@ -91,7 +93,7 @@ function buildData(usage) {
 
     for (let i in usage) {
         resources.push({
-            x: Date.now() - ((usage.length * 5000) - (i * 5000)),
+            x: moment().subtract((usage.length * 5) - (i * 5), 'seconds'),
             y: usage[i]
         });
     }

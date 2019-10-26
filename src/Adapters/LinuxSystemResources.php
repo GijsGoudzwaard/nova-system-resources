@@ -19,7 +19,7 @@ class LinuxSystemResources implements SystemResourcesInterface
     public function __construct()
     {
         $free = shell_exec('free');
-        $free = (string)trim($free);
+        $free = (string) trim($free);
 
         $free_arr = explode("\n", $free);
 
@@ -46,7 +46,7 @@ class LinuxSystemResources implements SystemResourcesInterface
      */
     public function ramResources()
     {
-        return (int)$this->ram_resources[2];
+        return (int) $this->ram_resources[2];
     }
 
     /**
@@ -56,7 +56,7 @@ class LinuxSystemResources implements SystemResourcesInterface
      */
     public function ramTotalResources()
     {
-        return (int)$this->ram_resources[1];
+        return (int) $this->ram_resources[1];
     }
 
     /**
