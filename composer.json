@@ -1,7 +1,7 @@
 {
     "name": "gijsg/system-resources",
     "description": "A Laravel Nova card.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": [
         "laravel",
         "nova"
