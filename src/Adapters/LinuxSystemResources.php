@@ -23,7 +23,7 @@ class LinuxSystemResources implements SystemResourcesInterface
 
         $free_arr = explode("\n", $free);
 
-        $mem = explode(" ", $free_arr[1]);
+        $mem = explode(' ', $free_arr[1]);
         $mem = array_filter($mem);
 
         $this->ram_resources = array_merge($mem);

@@ -2,9 +2,9 @@
 
 namespace GijsG\SystemResources;
 
-use Laravel\Nova\Card;
-use Illuminate\Support\Facades\Cache;
 use GijsG\SystemResources\Adapters\SystemResources as Adapter;
+use Illuminate\Support\Facades\Cache;
+use Laravel\Nova\Card;
 
 class SystemResources extends Card
 {
@@ -53,7 +53,7 @@ class SystemResources extends Card
 
         $this->usage = Cache::get("{$resource}_resources");
 
-        $this->adapter = new Adapter;
+        $this->adapter = new Adapter();
     }
 
     /**
@@ -67,7 +67,7 @@ class SystemResources extends Card
     }
 
     /**
-     * Retrieve the cpu usage
+     * Retrieve the cpu usage.
      *
      * @return int
      */
@@ -84,10 +84,10 @@ class SystemResources extends Card
     public function component()
     {
         return $this->withMeta([
-            'usage' => $this->usage,
-            'resource' => $this->resource,
-            'locale' => app()->getLocale(),
-            'component' => 'systemAnalytics'
+            'usage'     => $this->usage,
+            'resource'  => $this->resource,
+            'locale'    => app()->getLocale(),
+            'component' => 'systemAnalytics',
         ]);
     }
 }
