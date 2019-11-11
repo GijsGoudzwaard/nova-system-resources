@@ -11,7 +11,7 @@ class WindowsSystemResources implements SystemResourcesInterface
      */
     public function cpuResources()
     {
-        $cpu = shell_exec("wmic cpu get loadpercentage");
+        $cpu = shell_exec('wmic cpu get loadpercentage');
 
         return (int) str_replace('LoadPercentage', '', $cpu);
     }
@@ -23,7 +23,7 @@ class WindowsSystemResources implements SystemResourcesInterface
      */
     public function ramResources()
     {
-        $ram = shell_exec("wmic OS get FreePhysicalMemory /Value");
+        $ram = shell_exec('wmic OS get FreePhysicalMemory /Value');
         $ram = (int) str_replace('FreePhysicalMemory=', '', $ram);
 
         return (int) ($ram / 1024);
@@ -36,7 +36,7 @@ class WindowsSystemResources implements SystemResourcesInterface
      */
     public function ramTotalResources()
     {
-        $ram = shell_exec("wmic OS get TotalVisibleMemorySize /Value");
+        $ram = shell_exec('wmic OS get TotalVisibleMemorySize /Value');
         $ram = (int) str_replace('TotalVisibleMemorySize=', '', $ram);
 
         return (int) ($ram / 1024);
