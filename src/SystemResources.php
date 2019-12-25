@@ -16,7 +16,7 @@ class SystemResources extends Card
     private $adapter;
 
     /**
-     * Will be either 'ram' or 'cpu'.
+     * Will be either 'ram', 'cpu' or 'disk'.
      *
      * @var string
      */
@@ -74,6 +74,16 @@ class SystemResources extends Card
     public function cpu()
     {
         return $this->adapter->cpuResources();
+    }
+
+    /**
+     * Retrieve the disk usage.
+     *
+     * @return int
+     */
+    public function disk()
+    {
+        return $this->adapter->diskResources();
     }
 
     /**

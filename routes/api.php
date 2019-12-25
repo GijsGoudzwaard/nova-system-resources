@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('ram', 'GijsG\SystemResources\SystemResources@ram');
 
 Route::get('cpu', 'GijsG\SystemResources\SystemResources@cpu');
+
+Route::get('disk', 'GijsG\SystemResources\SystemResources@disk');

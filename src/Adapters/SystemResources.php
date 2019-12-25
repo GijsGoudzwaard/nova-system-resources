@@ -46,6 +46,20 @@ class SystemResources
     }
 
     /**
+     * Retrieve the used resources from the total resources as a percentage.
+     *
+     * @return int
+     */
+    public function diskResources()
+    {
+        $usage = $this->getDriver()->diskUsedResourcesPercentage();
+
+        $this->cacheResources('disk', $usage);
+
+        return $usage;
+    }
+
+    /**
      * Cache the resource results so on refresh we don't have to wait for data to come in.
      *
      * @param string $resource

@@ -51,4 +51,19 @@ class WindowsSystemResources implements SystemResourcesInterface
     {
         return 100 - ($this->ramResources() / $this->ramTotalResources() * 100);
     }
+
+    /**
+     * Retrieve the disk usage.
+     *
+     * @return int
+     */
+    public function diskUsedResourcesPercentage()
+    {
+        $totalDiskSpace = disk_total_space('/');
+        $freeDiskSpace = disk_free_space('/');
+
+        $usedDiskSpace = $totalDiskSpace - $freeDiskSpace;
+
+        return round(($usedDiskSpace / $totalDiskSpace) * 100);
+    }
 }

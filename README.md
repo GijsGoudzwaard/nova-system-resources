@@ -36,6 +36,7 @@ protected function cards()
         // ...
         new \GijsG\SystemResources\SystemResources('ram'),
         new \GijsG\SystemResources\SystemResources('cpu'),
+        new \GijsG\SystemResources\SystemResources('disk'),
     ];
 }
 ```

@@ -1,5 +1,6 @@
 {
     "cpu_usage": "CPU usage",
     "ram_usage": "RAM usage",
+    "disk_usage": "DISK usage",
     "usage": "Usage"
 }

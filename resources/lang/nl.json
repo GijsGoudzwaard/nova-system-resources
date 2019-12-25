@@ -1,5 +1,6 @@
 {
     "cpu_usage": "CPU verbruik",
     "ram_usage": "RAM verbruik",
+    "disk_usage": "DISK verbruik",
     "usage": "Verbruik"
 }

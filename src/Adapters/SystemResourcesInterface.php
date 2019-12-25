@@ -31,4 +31,11 @@ interface SystemResourcesInterface
      * @return int
      */
     public function ramUsedResourcesPercentage();
+
+    /**
+     * Retrieve the used resources from the total resources as a percentage.
+     *
+     * @return int
+     */
+    public function diskUsedResourcesPercentage();
 }
