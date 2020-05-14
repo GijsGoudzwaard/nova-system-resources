@@ -86,6 +86,8 @@ export default function lineChart(ctx, element) {
 
         chart.update();
     });
+
+    return chart;
 }
 
 function buildData(usage) {
