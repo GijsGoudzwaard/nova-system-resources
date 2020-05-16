@@ -15,11 +15,16 @@
         props: ["card"],
 
         mounted() {
-            lineChart(this, document.getElementById(this.resource));
+            this.chart = lineChart(this, document.getElementById(this.resource));
+        },
+
+        destroyed() {
+            this.chart.destroy();
         },
 
         data() {
             return {
+                chart: null,
                 resource: this.card.resource
             };
         }
