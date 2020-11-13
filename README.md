@@ -4,13 +4,13 @@
 [![Latest Stable Version](https://poser.pugx.org/gijsg/system-resources/v/stable)](https://packagist.org/packages/gijsg/system-resources)
 [![License](https://poser.pugx.org/gijsg/system-resources/license)](https://packagist.org/packages/gijsg/system-resources)
 
-This [Nova](https://nova.laravel.com) tool gives you a live overview of your RAM and CPU usage.
+This [Nova](https://nova.laravel.com) tool gives you a live overview of your RAM and CPU usage of your system.
 
 ![screenshot of the backup tool](screenshot.png)
 
 ## Requirements
 
-You must use either Linux or MacOS.
+You must use either Linux, MacOS or Windows.
 
 `shell_exec` must not be disabled in your `php.ini`. Make sure that `disabled_functions` does not contain `shell_exec`.
 
