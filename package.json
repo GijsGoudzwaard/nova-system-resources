@@ -15,7 +15,7 @@
     },
     "dependencies": {
         "axios": "^0.21.1",
-        "chart.js": "2.8.*",
+        "chart.js": "2.9.*",
         "chartjs-plugin-streaming": "^1.8.0",
         "moment": "^2.24.0",
         "vue": "^2.6.0"
