@@ -45,3 +45,9 @@ You can specify the width of the cards using the nova card width notation: `1/2`
 new \GijsG\SystemResources\SystemResources('ram', '1/3'),
 ```
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+## Support us
+
+![Direct Insight screenshot](direct-insight-screenshot.jpg)
+
+API response invalid? We notify you instantly! [Direct Insight](https://directinsight.io/) monitors your API making sure it behaves like you expect it does. Be the first to know when your API does not work as expected.
